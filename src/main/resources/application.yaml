@@ -1,0 +1,20 @@
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+  application:
+    name: procesador
+
+
+file-processing:
+  name: ${FILE_PROCESSING_NAME:data.json}
+  path: ${FILE_PROCESSING_PATH:/input/}
+  chunkSize: ${FILE_PROCESSING_CHUNK_SIZE:1000}
+file-result:
+  path: ${FILE_RESULT_PATH:/output/outXml/}
+
+report-html:
+  path: ${REPORT_HTML_RESULT_PATH:/output/outHtml/}
+

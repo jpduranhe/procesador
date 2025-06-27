@@ -1,0 +1,23 @@
+FROM eclipse-temurin:21-jdk
+
+#RUN useradd -u 8877 deployment
+#USER deployment
+ENV TZ America/Santiago
+#Set app home folder
+ENV APP_HOME /app
+ENV JAVA_OPTS=" -Dorg.glassfish.jaxb.XmlAccessorFactory=true -Duser.timezone=America/Santiago -Djava.security.egd=file:/dev/./urandom -Xmx1024m"
+
+#Create base app folder
+# Create necessary directories
+RUN mkdir -p "$APP_HOME" "$APP_HOME/config" "$APP_HOME/log"
+
+VOLUME $APP_HOME/log
+VOLUME $APP_HOME/config
+
+WORKDIR $APP_HOME
+COPY target/*-SNAPSHOT.jar app.jar
+
+RUN mvn dependency:get -Dartifact=jakarta.xml.bind:jakarta.xml.bind-api:4.0.0
+RUN mvn dependency:get -Dartifact=org.glassfish.jaxb:jaxb-runtime:4.0.2
+
+ENTRYPOINT ["java $JAVA_OPTS","-jar", "app.jar","--debug"]

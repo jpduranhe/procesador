@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prueba-tecnica-app
+
+    environment:
+
+      - FILE_PROCESSING_CHUNK_SIZE=100 # Tamaño del chunk para el procesamiento de archivos
+      - FILE_PROCESSING_NAME=lote.ejemplo.json # Nombre del archivo a procesar
+
+
+    volumes:
+      - ./processing-app:/output
+      - ./processing-app:/input
