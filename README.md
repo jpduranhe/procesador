@@ -42,7 +42,7 @@ dentro de la carpeta processing-app en la base  se crearan las carpetas outHtml 
 
 ## ⚠️ Consideraciones Importantes
 
-- Los tests se omiten durante la fase de construcción de la imagen
+- Los tests NO omiten durante la fase de construcción de la imagen
 - La configuración de la aplicación se realiza mediante el archivo JAR ejecutable
 
 ## 📝 Verificación de Funcionamiento
