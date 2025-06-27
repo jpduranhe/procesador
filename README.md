@@ -31,7 +31,7 @@ docker compose up
 ```
 
 ### 3. Ejecutar el Contenedor
-dentro de la carpeta processing-app en la base  se crearan las carpetas outHtml que tendrá el html del informe salida, la carpeta aoutXML que tenra los archivos XML generados
+Dentro de la carpeta processing-app en la base  se crearan las carpetas outHtml que tendrá el html del informe salida, la carpeta aoutXML que tendra los archivos XML generados
 
 
 ## 🔧 Especificaciones Técnicas
