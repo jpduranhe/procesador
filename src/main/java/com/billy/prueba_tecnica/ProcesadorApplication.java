@@ -36,7 +36,7 @@ public class ProcesadorApplication implements CommandLineRunner {
 			jobLauncher.run(job,parameters);
 			reportHtmlGenerator.generateReport();
 
-			//System.exit(0);
+			System.exit(0);
 		} catch (Exception e) {
 			log.error("Error al Ejecutar el proceso {}",e.getMessage(), e);
 		}
