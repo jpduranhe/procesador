@@ -27,7 +27,7 @@ The following was discovered as part of building this project:
 ### 1. Ejecutar el Comando de Docker Compose
 
 ```bash
-docker compose up -d
+docker compose up 
 ```
 
 ### 3. Ejecutar el Contenedor
